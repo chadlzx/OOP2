@@ -20,13 +20,13 @@ $(PROGRAM): $(CPP_FILES) $(H_FILES) libStanfordCPPLib.a
 libStanfordCPPLib.a:
 	@rd -f libStanfordCPPLib.a
 	(cd StanfordCPPLib; make -f makefile-for-judge all)
-	ln -s StanfordCPPLib/libStanfordCPPLib.a .
+	ln -s libStanfordCPPLib.a .
 
 spl.jar:
-	ln -s StanfordCPPLib/spl.jar .
+	ln -s spl.jar .
 
 tidy:
-	(cd StanfordCPPLib; make -f makefile-for-judge clean)
+	( make -f makefile-for-judge clean)
 	rd -f ,* .,* *~ core a.out *.err
 
 clean scratch: tidy
