@@ -18,8 +18,7 @@ $(PROGRAM): $(CPP_FILES) $(H_FILES) libStanfordCPPLib.a
 	$(CXX) -o $(PROGRAM) $(CXXFLAGS) $(LDOPTIONS) $(CPP_FILES) $(LIB)
 
 libStanfordCPPLib.a:
-	@rd -f libStanfordCPPLib.a
-	(cd StanfordCPPLib; make -f makefile-for-judge all)
+	(make -f makefile-for-judge all)
 	ln -s libStanfordCPPLib.a .
 
 spl.jar:
